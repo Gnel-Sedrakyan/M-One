@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'auth_failure.dart';
+part of 'sign_in_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$AuthFailure {
+mixin _$SignInFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
@@ -60,19 +60,20 @@ mixin _$AuthFailure {
 }
 
 /// @nodoc
-abstract class $AuthFailureCopyWith<$Res> {
-  factory $AuthFailureCopyWith(
-          AuthFailure value, $Res Function(AuthFailure) then) =
-      _$AuthFailureCopyWithImpl<$Res>;
+abstract class $SignInFailureCopyWith<$Res> {
+  factory $SignInFailureCopyWith(
+          SignInFailure value, $Res Function(SignInFailure) then) =
+      _$SignInFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
-  _$AuthFailureCopyWithImpl(this._value, this._then);
+class _$SignInFailureCopyWithImpl<$Res>
+    implements $SignInFailureCopyWith<$Res> {
+  _$SignInFailureCopyWithImpl(this._value, this._then);
 
-  final AuthFailure _value;
+  final SignInFailure _value;
   // ignore: unused_field
-  final $Res Function(AuthFailure) _then;
+  final $Res Function(SignInFailure) _then;
 }
 
 /// @nodoc
@@ -83,7 +84,8 @@ abstract class _$$ServerErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+class __$$ServerErrorCopyWithImpl<$Res>
+    extends _$SignInFailureCopyWithImpl<$Res>
     implements _$$ServerErrorCopyWith<$Res> {
   __$$ServerErrorCopyWithImpl(
       _$ServerError _value, $Res Function(_$ServerError) _then)
@@ -100,7 +102,7 @@ class _$ServerError implements ServerError {
 
   @override
   String toString() {
-    return 'AuthFailure.serverError()';
+    return 'SignInFailure.serverError()';
   }
 
   @override
@@ -178,7 +180,7 @@ class _$ServerError implements ServerError {
   }
 }
 
-abstract class ServerError implements AuthFailure {
+abstract class ServerError implements SignInFailure {
   const factory ServerError() = _$ServerError;
 }
 
@@ -192,7 +194,7 @@ abstract class _$$InvalidEmailAndPasswordCombinationCopyWith<$Res> {
 
 /// @nodoc
 class __$$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$SignInFailureCopyWithImpl<$Res>
     implements _$$InvalidEmailAndPasswordCombinationCopyWith<$Res> {
   __$$InvalidEmailAndPasswordCombinationCopyWithImpl(
       _$InvalidEmailAndPasswordCombination _value,
@@ -212,7 +214,7 @@ class _$InvalidEmailAndPasswordCombination
 
   @override
   String toString() {
-    return 'AuthFailure.invalidCredentialsCombination()';
+    return 'SignInFailure.invalidCredentialsCombination()';
   }
 
   @override
@@ -291,7 +293,7 @@ class _$InvalidEmailAndPasswordCombination
   }
 }
 
-abstract class InvalidEmailAndPasswordCombination implements AuthFailure {
+abstract class InvalidEmailAndPasswordCombination implements SignInFailure {
   const factory InvalidEmailAndPasswordCombination() =
       _$InvalidEmailAndPasswordCombination;
 }
