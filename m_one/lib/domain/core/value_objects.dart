@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:m_one/domain/core/value_validators.dart';
 import 'package:meta/meta.dart';
 import 'package:uuid/uuid.dart';
 import 'package:m_one/domain/core/common_interfaces.dart';
@@ -64,4 +65,30 @@ class UniqueId extends ValueObject<String> {
   }
 
   const UniqueId._(this.value);
+}
+
+class RefreshToken extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory RefreshToken(String input) {
+    return RefreshToken._(
+      validateSingleLine(input),
+    );
+  }
+
+  const RefreshToken._(this.value);
+}
+
+class AccessToken extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory AccessToken(String input) {
+    return AccessToken._(
+      validateSingleLine(input),
+    );
+  }
+
+  const AccessToken._(this.value);
 }

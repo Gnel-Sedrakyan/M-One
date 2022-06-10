@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ValueFailure<T> {
-  String get failedValue => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String failedValue) invalidUsername,
@@ -26,6 +25,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(String failedValue) hasNoTwoDigitsRegex,
     required TResult Function(String failedValue)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +36,7 @@ mixin _$ValueFailure<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +47,7 @@ mixin _$ValueFailure<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +62,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
     required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +75,7 @@ mixin _$ValueFailure<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,12 +88,9 @@ mixin _$ValueFailure<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ValueFailureCopyWith<T, ValueFailure<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -98,7 +99,6 @@ abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
-  $Res call({String failedValue});
 }
 
 /// @nodoc
@@ -109,27 +109,13 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   final ValueFailure<T> _value;
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
-
-  @override
-  $Res call({
-    Object? failedValue = freezed,
-  }) {
-    return _then(_value.copyWith(
-      failedValue: failedValue == freezed
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$$InvalidUsernameCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$InvalidUsernameCopyWith<T, $Res> {
   factory _$$InvalidUsernameCopyWith(_$InvalidUsername<T> value,
           $Res Function(_$InvalidUsername<T>) then) =
       __$$InvalidUsernameCopyWithImpl<T, $Res>;
-  @override
   $Res call({String failedValue});
 }
 
@@ -199,6 +185,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(String failedValue) hasNoTwoDigitsRegex,
     required TResult Function(String failedValue)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
   }) {
     return invalidUsername(failedValue);
   }
@@ -212,6 +199,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
   }) {
     return invalidUsername?.call(failedValue);
   }
@@ -225,6 +213,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
     required TResult orElse(),
   }) {
     if (invalidUsername != null) {
@@ -245,6 +234,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
     required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
   }) {
     return invalidUsername(this);
   }
@@ -260,6 +250,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
   }) {
     return invalidUsername?.call(this);
   }
@@ -275,6 +266,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
     required TResult orElse(),
   }) {
     if (invalidUsername != null) {
@@ -288,21 +280,17 @@ abstract class InvalidUsername<T> implements ValueFailure<T> {
   const factory InvalidUsername({required final String failedValue}) =
       _$InvalidUsername<T>;
 
-  @override
   String get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$InvalidUsernameCopyWith<T, _$InvalidUsername<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidEmailCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$InvalidEmailCopyWith<T, $Res> {
   factory _$$InvalidEmailCopyWith(
           _$InvalidEmail<T> value, $Res Function(_$InvalidEmail<T>) then) =
       __$$InvalidEmailCopyWithImpl<T, $Res>;
-  @override
   $Res call({String failedValue});
 }
 
@@ -371,6 +359,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(String failedValue) hasNoTwoDigitsRegex,
     required TResult Function(String failedValue)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
   }) {
     return invalidEmail(failedValue);
   }
@@ -384,6 +373,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -397,6 +387,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -417,6 +408,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
     required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
   }) {
     return invalidEmail(this);
   }
@@ -432,6 +424,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
   }) {
     return invalidEmail?.call(this);
   }
@@ -447,6 +440,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -460,22 +454,18 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail({required final String failedValue}) =
       _$InvalidEmail<T>;
 
-  @override
   String get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HasNoTwoUppercaseLettersCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$HasNoTwoUppercaseLettersCopyWith<T, $Res> {
   factory _$$HasNoTwoUppercaseLettersCopyWith(
           _$HasNoTwoUppercaseLetters<T> value,
           $Res Function(_$HasNoTwoUppercaseLetters<T>) then) =
       __$$HasNoTwoUppercaseLettersCopyWithImpl<T, $Res>;
-  @override
   $Res call({String failedValue});
 }
 
@@ -546,6 +536,7 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
     required TResult Function(String failedValue) hasNoTwoDigitsRegex,
     required TResult Function(String failedValue)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
   }) {
     return hasNoTwoUppercaseLetters(failedValue);
   }
@@ -559,6 +550,7 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
   }) {
     return hasNoTwoUppercaseLetters?.call(failedValue);
   }
@@ -572,6 +564,7 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
     required TResult orElse(),
   }) {
     if (hasNoTwoUppercaseLetters != null) {
@@ -592,6 +585,7 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
     required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
     required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
   }) {
     return hasNoTwoUppercaseLetters(this);
   }
@@ -607,6 +601,7 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
   }) {
     return hasNoTwoUppercaseLetters?.call(this);
   }
@@ -622,6 +617,7 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
     required TResult orElse(),
   }) {
     if (hasNoTwoUppercaseLetters != null) {
@@ -635,21 +631,17 @@ abstract class HasNoTwoUppercaseLetters<T> implements ValueFailure<T> {
   const factory HasNoTwoUppercaseLetters({required final String failedValue}) =
       _$HasNoTwoUppercaseLetters<T>;
 
-  @override
   String get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$HasNoTwoUppercaseLettersCopyWith<T, _$HasNoTwoUppercaseLetters<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HasNoSpecialcaseLettersCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$HasNoSpecialcaseLettersCopyWith<T, $Res> {
   factory _$$HasNoSpecialcaseLettersCopyWith(_$HasNoSpecialcaseLetters<T> value,
           $Res Function(_$HasNoSpecialcaseLetters<T>) then) =
       __$$HasNoSpecialcaseLettersCopyWithImpl<T, $Res>;
-  @override
   $Res call({String failedValue});
 }
 
@@ -720,6 +712,7 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
     required TResult Function(String failedValue) hasNoTwoDigitsRegex,
     required TResult Function(String failedValue)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
   }) {
     return hasNoSpecialcaseLetters(failedValue);
   }
@@ -733,6 +726,7 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
   }) {
     return hasNoSpecialcaseLetters?.call(failedValue);
   }
@@ -746,6 +740,7 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
     required TResult orElse(),
   }) {
     if (hasNoSpecialcaseLetters != null) {
@@ -766,6 +761,7 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
     required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
     required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
   }) {
     return hasNoSpecialcaseLetters(this);
   }
@@ -781,6 +777,7 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
   }) {
     return hasNoSpecialcaseLetters?.call(this);
   }
@@ -796,6 +793,7 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
     required TResult orElse(),
   }) {
     if (hasNoSpecialcaseLetters != null) {
@@ -809,21 +807,17 @@ abstract class HasNoSpecialcaseLetters<T> implements ValueFailure<T> {
   const factory HasNoSpecialcaseLetters({required final String failedValue}) =
       _$HasNoSpecialcaseLetters<T>;
 
-  @override
   String get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$HasNoSpecialcaseLettersCopyWith<T, _$HasNoSpecialcaseLetters<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HasNoTwoDigitsRegexCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$HasNoTwoDigitsRegexCopyWith<T, $Res> {
   factory _$$HasNoTwoDigitsRegexCopyWith(_$HasNoTwoDigitsRegex<T> value,
           $Res Function(_$HasNoTwoDigitsRegex<T>) then) =
       __$$HasNoTwoDigitsRegexCopyWithImpl<T, $Res>;
-  @override
   $Res call({String failedValue});
 }
 
@@ -894,6 +888,7 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
     required TResult Function(String failedValue) hasNoTwoDigitsRegex,
     required TResult Function(String failedValue)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
   }) {
     return hasNoTwoDigitsRegex(failedValue);
   }
@@ -907,6 +902,7 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
   }) {
     return hasNoTwoDigitsRegex?.call(failedValue);
   }
@@ -920,6 +916,7 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
     required TResult orElse(),
   }) {
     if (hasNoTwoDigitsRegex != null) {
@@ -940,6 +937,7 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
     required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
     required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
   }) {
     return hasNoTwoDigitsRegex(this);
   }
@@ -955,6 +953,7 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
   }) {
     return hasNoTwoDigitsRegex?.call(this);
   }
@@ -970,6 +969,7 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
     required TResult orElse(),
   }) {
     if (hasNoTwoDigitsRegex != null) {
@@ -983,22 +983,18 @@ abstract class HasNoTwoDigitsRegex<T> implements ValueFailure<T> {
   const factory HasNoTwoDigitsRegex({required final String failedValue}) =
       _$HasNoTwoDigitsRegex<T>;
 
-  @override
   String get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$HasNoTwoDigitsRegexCopyWith<T, _$HasNoTwoDigitsRegex<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HasNoThreeLowercaseLettersRegexCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$HasNoThreeLowercaseLettersRegexCopyWith<T, $Res> {
   factory _$$HasNoThreeLowercaseLettersRegexCopyWith(
           _$HasNoThreeLowercaseLettersRegex<T> value,
           $Res Function(_$HasNoThreeLowercaseLettersRegex<T>) then) =
       __$$HasNoThreeLowercaseLettersRegexCopyWithImpl<T, $Res>;
-  @override
   $Res call({String failedValue});
 }
 
@@ -1072,6 +1068,7 @@ class _$HasNoThreeLowercaseLettersRegex<T>
     required TResult Function(String failedValue) hasNoTwoDigitsRegex,
     required TResult Function(String failedValue)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
   }) {
     return hasNoThreeLowercaseLettersRegex(failedValue);
   }
@@ -1085,6 +1082,7 @@ class _$HasNoThreeLowercaseLettersRegex<T>
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
   }) {
     return hasNoThreeLowercaseLettersRegex?.call(failedValue);
   }
@@ -1098,6 +1096,7 @@ class _$HasNoThreeLowercaseLettersRegex<T>
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
     TResult Function(String failedValue)? hasNoTwoDigitsRegex,
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
     required TResult orElse(),
   }) {
     if (hasNoThreeLowercaseLettersRegex != null) {
@@ -1118,6 +1117,7 @@ class _$HasNoThreeLowercaseLettersRegex<T>
     required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
     required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
         hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
   }) {
     return hasNoThreeLowercaseLettersRegex(this);
   }
@@ -1133,6 +1133,7 @@ class _$HasNoThreeLowercaseLettersRegex<T>
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
   }) {
     return hasNoThreeLowercaseLettersRegex?.call(this);
   }
@@ -1148,6 +1149,7 @@ class _$HasNoThreeLowercaseLettersRegex<T>
     TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
     TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
         hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
     required TResult orElse(),
   }) {
     if (hasNoThreeLowercaseLettersRegex != null) {
@@ -1162,11 +1164,182 @@ abstract class HasNoThreeLowercaseLettersRegex<T> implements ValueFailure<T> {
           {required final String failedValue}) =
       _$HasNoThreeLowercaseLettersRegex<T>;
 
-  @override
   String get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$HasNoThreeLowercaseLettersRegexCopyWith<T,
           _$HasNoThreeLowercaseLettersRegex<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MultilineCopyWith<T, $Res> {
+  factory _$$MultilineCopyWith(
+          _$Multiline<T> value, $Res Function(_$Multiline<T>) then) =
+      __$$MultilineCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$MultilineCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$MultilineCopyWith<T, $Res> {
+  __$$MultilineCopyWithImpl(
+      _$Multiline<T> _value, $Res Function(_$Multiline<T>) _then)
+      : super(_value, (v) => _then(v as _$Multiline<T>));
+
+  @override
+  _$Multiline<T> get _value => super._value as _$Multiline<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$Multiline<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Multiline<T> implements Multiline<T> {
+  const _$Multiline({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.multiline(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Multiline<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$MultilineCopyWith<T, _$Multiline<T>> get copyWith =>
+      __$$MultilineCopyWithImpl<T, _$Multiline<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
+    required TResult Function(String failedValue) hasNoSpecialcaseLetters,
+    required TResult Function(String failedValue) hasNoTwoDigitsRegex,
+    required TResult Function(String failedValue)
+        hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
+  }) {
+    return multiline(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
+    TResult Function(String failedValue)? hasNoSpecialcaseLetters,
+    TResult Function(String failedValue)? hasNoTwoDigitsRegex,
+    TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
+  }) {
+    return multiline?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
+    TResult Function(String failedValue)? hasNoSpecialcaseLetters,
+    TResult Function(String failedValue)? hasNoTwoDigitsRegex,
+    TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
+    required TResult orElse(),
+  }) {
+    if (multiline != null) {
+      return multiline(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(HasNoTwoUppercaseLetters<T> value)
+        hasNoTwoUppercaseLetters,
+    required TResult Function(HasNoSpecialcaseLetters<T> value)
+        hasNoSpecialcaseLetters,
+    required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
+    required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
+        hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
+  }) {
+    return multiline(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(HasNoTwoUppercaseLetters<T> value)?
+        hasNoTwoUppercaseLetters,
+    TResult Function(HasNoSpecialcaseLetters<T> value)? hasNoSpecialcaseLetters,
+    TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
+    TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
+        hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
+  }) {
+    return multiline?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(HasNoTwoUppercaseLetters<T> value)?
+        hasNoTwoUppercaseLetters,
+    TResult Function(HasNoSpecialcaseLetters<T> value)? hasNoSpecialcaseLetters,
+    TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
+    TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
+        hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
+    required TResult orElse(),
+  }) {
+    if (multiline != null) {
+      return multiline(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Multiline<T> implements ValueFailure<T> {
+  const factory Multiline({required final T failedValue}) = _$Multiline<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$MultilineCopyWith<T, _$Multiline<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

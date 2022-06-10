@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:m_one/domain/auth/register_failure.dart';
 import 'package:m_one/domain/auth/user.dart';

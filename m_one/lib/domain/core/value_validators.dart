@@ -10,8 +10,9 @@ Either<ValueFailure<String>, String> validateUsername(String input) {
 }
 
 Either<ValueFailure<String>, String> validateEmail(String input) {
-  const uid = r"""^[0-9]{1,7}$""";
-  if (RegExp(uid).hasMatch(input)) {
+  const emailRegex =
+      r"""^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+""";
+  if (RegExp(emailRegex).hasMatch(input)) {
     return right(input);
   }
   return left(ValueFailure.invalidEmail(failedValue: input));
@@ -37,4 +38,12 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     );
   }
   return right(input);
+}
+
+Either<ValueFailure<String>, String> validateSingleLine(String input) {
+  if (input.contains('\n')) {
+    return left(ValueFailure.multiline(failedValue: input));
+  } else {
+    return right(input);
+  }
 }
