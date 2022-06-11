@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:m_one/presentation/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -110,8 +108,8 @@ class _ValidatedTextFieldState extends State<ValidatedTextField> {
                           return SlideTransition(
                             child: child,
                             position: Tween<Offset>(
-                                    begin: Offset(-0.3, -1.0),
-                                    end: Offset(0.0, 0.0))
+                                    begin: const Offset(-0.3, -1.0),
+                                    end: const Offset(0.0, 0.0))
                                 .animate(animation),
                           );
                         },

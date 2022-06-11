@@ -1,4 +1,3 @@
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:m_one/application/auth/auth_store.dart';
 import 'package:m_one/injection.dart';
 

@@ -1,15 +1,11 @@
-import 'dart:developer';
-
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'package:m_one/application/auth/auth_store.dart';
 import 'package:m_one/injection.dart';
 
 import 'package:flutter/material.dart';
-import 'package:m_one/presentation/widgets/auth/rounded_text_field.dart';
 import 'package:m_one/presentation/widgets/auth/toggle_button.dart';
 import 'package:m_one/presentation/widgets/auth/validated_text_field.dart';
-import 'package:mobx/mobx.dart';
 
 class AuthScreen extends StatelessWidget {
   AuthScreen({Key? key}) : super(key: key);

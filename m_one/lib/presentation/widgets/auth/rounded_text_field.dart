@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:m_one/presentation/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -21,9 +19,9 @@ class RoundedTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextFormField(
         decoration: InputDecoration(
-          errorStyle: TextStyle(color: Colors.green),
+          errorStyle: const TextStyle(color: Colors.green),
           focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey),
+              borderSide: const BorderSide(color: Colors.grey),
               borderRadius: BorderRadius.circular(defaultBorderRadius)),
 
           hintText: labelText,

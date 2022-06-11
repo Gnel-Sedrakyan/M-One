@@ -1,12 +1,10 @@
-import 'package:flutter_mobx/flutter_mobx.dart';
-
 import 'package:m_one/application/auth/auth_store.dart';
 import 'package:m_one/injection.dart';
 
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

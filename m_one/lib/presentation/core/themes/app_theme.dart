@@ -51,7 +51,7 @@ class AppTheme {
       buttonTheme: ButtonThemeData(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(defaultBorderRadius),
-            side: BorderSide(color: Colors.red)),
+            side: const BorderSide(color: Colors.red)),
         colorScheme: colorScheme,
         textTheme: ButtonTextTheme.primary,
       ),

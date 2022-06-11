@@ -25,7 +25,7 @@ class SplashPage extends Page {
     return MaterialPageRoute(
       settings: this,
       builder: (BuildContext context) {
-        return SplashScreen();
+        return const SplashScreen();
       },
     );
   }

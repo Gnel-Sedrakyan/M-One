@@ -84,7 +84,7 @@ class _ToggleButtonState extends State<ToggleButton> {
               decoration: BoxDecoration(
                 color: widget.toggleColor,
                 borderRadius: const BorderRadius.all(
-                  const Radius.circular(50.0),
+                  Radius.circular(50.0),
                 ),
               ),
             ),
