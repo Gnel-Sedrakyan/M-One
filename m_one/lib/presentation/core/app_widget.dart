@@ -11,7 +11,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.buildLightTheme(),
       darkTheme: AppTheme.buildDarkTheme(),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       // TODO backbuttondispatcher for android's back button
       home: Router(
         routerDelegate: delegate,
