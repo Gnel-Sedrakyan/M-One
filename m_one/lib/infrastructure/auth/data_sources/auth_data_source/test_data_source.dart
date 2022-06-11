@@ -1,4 +1,6 @@
+import 'dart:collection';
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:m_one/domain/auth/value_objects.dart';
 import 'package:m_one/domain/core/value_objects.dart';
@@ -30,12 +32,12 @@ class AuthTestDataSource implements IAuthDataSource {
     final passwordStr = password.getOrCrash();
     final emailStr = email.getOrCrash();
 
-    final allUsersJsonString = sharedPreferences.getString(allUsers);
-
+    final usersJsonList = sharedPreferences.getStringList(allUsers);
+    log(usersJsonList.toString());
     List<UserDataModel> usersList = [];
 
-    if (allUsersJsonString != null) {
-      usersList = json.decode(allUsersJsonString);
+    if (usersJsonList != null) {
+      usersList = usersJsonList.map((e) => UserDataModel.fromJson(e)).toList();
       final sameEmailUserIndex =
           usersList.indexWhere((element) => element.email == emailStr);
       if (sameEmailUserIndex != -1) {
@@ -58,6 +60,15 @@ class AuthTestDataSource implements IAuthDataSource {
     );
     usersList.add(newUserData);
 
+    // TODO use SQLite
+    List<String> updatedUsersJsonList =
+        usersList.map((e) => e.toJson()).toList();
+
+    await sharedPreferences.setStringList(
+      allUsers,
+      updatedUsersJsonList,
+    );
+
     return Future.value(newUser);
   }
 
@@ -69,13 +80,22 @@ class AuthTestDataSource implements IAuthDataSource {
     final usernameStr = username.getOrCrash();
     final passwordStr = password.getOrCrash();
 
-    final allUsersJsonString = sharedPreferences.getString(allUsers);
-    if (allUsersJsonString == null) {
+    log("usernameStr");
+    log(usernameStr);
+    log("usernameStr");
+
+    final usersJsonList = sharedPreferences.getStringList(allUsers);
+    log(usersJsonList.toString());
+    if (usersJsonList == null) {
       throw PlatformException(code: 'INVALID_CREDENTIALS_COMBINATION');
     }
-    List<UserDataModel> usersList = json.decode(allUsersJsonString);
+    // TODO refactor this (use SQLite here too)
+    List<UserDataModel> usersList =
+        usersJsonList.map((e) => UserDataModel.fromJson(e)).toList();
     final sameUsernameUserIndex =
         usersList.indexWhere((element) => element.username == usernameStr);
+    log(sameUsernameUserIndex.toString());
+    log(usernameStr);
     if (sameUsernameUserIndex == -1) {
       throw PlatformException(code: 'INVALID_CREDENTIALS_COMBINATION');
     }

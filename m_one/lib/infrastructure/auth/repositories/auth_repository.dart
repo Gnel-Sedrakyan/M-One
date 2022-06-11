@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:m_one/domain/auth/register_failure.dart';
 import 'package:m_one/domain/auth/sign_in_failure.dart';
 import 'package:m_one/domain/auth/user.dart';
@@ -27,17 +29,23 @@ class AuthDataRepository implements IAuthDataRepository {
     required Username username,
     required Password password,
   }) async {
+    log('signInWithUsernameAndPassword');
+
     try {
       final UserModel user = await authDataSource.signInWithUsernameAndPassword(
         username: username,
         password: password,
       );
       await userDataSource.cacheUser(user);
+      log('cached user');
       return right(unit);
     } on PlatformException catch (e) {
+      log(e.toString());
       if (e.code == 'INVALID_CREDENTIALS_COMBINATION') {
         return left(const SignInFailure.invalidCredentialsCombination());
       } else {
+        log('server error');
+
         return left(const SignInFailure.serverError());
       }
     }
@@ -50,6 +58,8 @@ class AuthDataRepository implements IAuthDataRepository {
     required Password password,
     required Email email,
   }) async {
+    log('registerWithEmailAndUsernameAndPassword');
+
     try {
       final UserModel user =
           await authDataSource.registerWithEmailAndUsernameAndPassword(
@@ -71,15 +81,21 @@ class AuthDataRepository implements IAuthDataRepository {
   @override
   Future<Option<User>> getSignedInUser() async {
     try {
+      log('getSignedInUser');
       final UserModel user = await userDataSource.getCachedUser();
+      log(user.toString());
       return Some(user);
-    } on NoCachedValueError catch (_) {
+    } on NoCachedValueError catch (a_) {
+      log(a_.toString());
+
       return none();
     }
   }
 
   @override
   Future<void> signOut() async {
+    log('signOut');
+
     await userDataSource.removeCachedUser();
   }
 }

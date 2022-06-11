@@ -18,7 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
     required TResult Function(String failedValue) invalidEmail,
     required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
     required TResult Function(String failedValue) hasNoSpecialcaseLetters,
@@ -30,7 +31,8 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -41,7 +43,8 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -53,7 +56,8 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(HasNoTwoUppercaseLetters<T> value)
         hasNoTwoUppercaseLetters,
@@ -67,7 +71,8 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -80,7 +85,8 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -112,29 +118,29 @@ class _$ValueFailureCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-abstract class _$$InvalidUsernameCopyWith<T, $Res> {
-  factory _$$InvalidUsernameCopyWith(_$InvalidUsername<T> value,
-          $Res Function(_$InvalidUsername<T>) then) =
-      __$$InvalidUsernameCopyWithImpl<T, $Res>;
+abstract class _$$UnfilledUsernameCopyWith<T, $Res> {
+  factory _$$UnfilledUsernameCopyWith(_$UnfilledUsername<T> value,
+          $Res Function(_$UnfilledUsername<T>) then) =
+      __$$UnfilledUsernameCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class __$$InvalidUsernameCopyWithImpl<T, $Res>
+class __$$UnfilledUsernameCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements _$$InvalidUsernameCopyWith<T, $Res> {
-  __$$InvalidUsernameCopyWithImpl(
-      _$InvalidUsername<T> _value, $Res Function(_$InvalidUsername<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidUsername<T>));
+    implements _$$UnfilledUsernameCopyWith<T, $Res> {
+  __$$UnfilledUsernameCopyWithImpl(
+      _$UnfilledUsername<T> _value, $Res Function(_$UnfilledUsername<T>) _then)
+      : super(_value, (v) => _then(v as _$UnfilledUsername<T>));
 
   @override
-  _$InvalidUsername<T> get _value => super._value as _$InvalidUsername<T>;
+  _$UnfilledUsername<T> get _value => super._value as _$UnfilledUsername<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(_$InvalidUsername<T>(
+    return _then(_$UnfilledUsername<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -145,22 +151,22 @@ class __$$InvalidUsernameCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$InvalidUsername<T> implements InvalidUsername<T> {
-  const _$InvalidUsername({required this.failedValue});
+class _$UnfilledUsername<T> implements UnfilledUsername<T> {
+  const _$UnfilledUsername({required this.failedValue});
 
   @override
   final String failedValue;
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.invalidUsername(failedValue: $failedValue)';
+    return 'ValueFailure<$T>.unfilledUsername(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InvalidUsername<T> &&
+            other is _$UnfilledUsername<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue));
   }
@@ -171,14 +177,15 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @JsonKey(ignore: true)
   @override
-  _$$InvalidUsernameCopyWith<T, _$InvalidUsername<T>> get copyWith =>
-      __$$InvalidUsernameCopyWithImpl<T, _$InvalidUsername<T>>(
+  _$$UnfilledUsernameCopyWith<T, _$UnfilledUsername<T>> get copyWith =>
+      __$$UnfilledUsernameCopyWithImpl<T, _$UnfilledUsername<T>>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
     required TResult Function(String failedValue) invalidEmail,
     required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
     required TResult Function(String failedValue) hasNoSpecialcaseLetters,
@@ -187,13 +194,14 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
         hasNoThreeLowercaseLettersRegex,
     required TResult Function(T failedValue) multiline,
   }) {
-    return invalidUsername(failedValue);
+    return unfilledUsername(failedValue);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -201,13 +209,14 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
     TResult Function(T failedValue)? multiline,
   }) {
-    return invalidUsername?.call(failedValue);
+    return unfilledUsername?.call(failedValue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -216,8 +225,8 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(T failedValue)? multiline,
     required TResult orElse(),
   }) {
-    if (invalidUsername != null) {
-      return invalidUsername(failedValue);
+    if (unfilledUsername != null) {
+      return unfilledUsername(failedValue);
     }
     return orElse();
   }
@@ -225,7 +234,8 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(HasNoTwoUppercaseLetters<T> value)
         hasNoTwoUppercaseLetters,
@@ -236,13 +246,14 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
         hasNoThreeLowercaseLettersRegex,
     required TResult Function(Multiline<T> value) multiline,
   }) {
-    return invalidUsername(this);
+    return unfilledUsername(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -252,13 +263,14 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
         hasNoThreeLowercaseLettersRegex,
     TResult Function(Multiline<T> value)? multiline,
   }) {
-    return invalidUsername?.call(this);
+    return unfilledUsername?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -269,20 +281,200 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(Multiline<T> value)? multiline,
     required TResult orElse(),
   }) {
-    if (invalidUsername != null) {
-      return invalidUsername(this);
+    if (unfilledUsername != null) {
+      return unfilledUsername(this);
     }
     return orElse();
   }
 }
 
-abstract class InvalidUsername<T> implements ValueFailure<T> {
-  const factory InvalidUsername({required final String failedValue}) =
-      _$InvalidUsername<T>;
+abstract class UnfilledUsername<T> implements ValueFailure<T> {
+  const factory UnfilledUsername({required final String failedValue}) =
+      _$UnfilledUsername<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$InvalidUsernameCopyWith<T, _$InvalidUsername<T>> get copyWith =>
+  _$$UnfilledUsernameCopyWith<T, _$UnfilledUsername<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnfilledEmailCopyWith<T, $Res> {
+  factory _$$UnfilledEmailCopyWith(
+          _$UnfilledEmail<T> value, $Res Function(_$UnfilledEmail<T>) then) =
+      __$$UnfilledEmailCopyWithImpl<T, $Res>;
+  $Res call({String failedValue});
+}
+
+/// @nodoc
+class __$$UnfilledEmailCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$UnfilledEmailCopyWith<T, $Res> {
+  __$$UnfilledEmailCopyWithImpl(
+      _$UnfilledEmail<T> _value, $Res Function(_$UnfilledEmail<T>) _then)
+      : super(_value, (v) => _then(v as _$UnfilledEmail<T>));
+
+  @override
+  _$UnfilledEmail<T> get _value => super._value as _$UnfilledEmail<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$UnfilledEmail<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnfilledEmail<T> implements UnfilledEmail<T> {
+  const _$UnfilledEmail({required this.failedValue});
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.unfilledEmail(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnfilledEmail<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UnfilledEmailCopyWith<T, _$UnfilledEmail<T>> get copyWith =>
+      __$$UnfilledEmailCopyWithImpl<T, _$UnfilledEmail<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
+    required TResult Function(String failedValue) hasNoSpecialcaseLetters,
+    required TResult Function(String failedValue) hasNoTwoDigitsRegex,
+    required TResult Function(String failedValue)
+        hasNoThreeLowercaseLettersRegex,
+    required TResult Function(T failedValue) multiline,
+  }) {
+    return unfilledEmail(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
+    TResult Function(String failedValue)? hasNoSpecialcaseLetters,
+    TResult Function(String failedValue)? hasNoTwoDigitsRegex,
+    TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
+  }) {
+    return unfilledEmail?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
+    TResult Function(String failedValue)? hasNoSpecialcaseLetters,
+    TResult Function(String failedValue)? hasNoTwoDigitsRegex,
+    TResult Function(String failedValue)? hasNoThreeLowercaseLettersRegex,
+    TResult Function(T failedValue)? multiline,
+    required TResult orElse(),
+  }) {
+    if (unfilledEmail != null) {
+      return unfilledEmail(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(HasNoTwoUppercaseLetters<T> value)
+        hasNoTwoUppercaseLetters,
+    required TResult Function(HasNoSpecialcaseLetters<T> value)
+        hasNoSpecialcaseLetters,
+    required TResult Function(HasNoTwoDigitsRegex<T> value) hasNoTwoDigitsRegex,
+    required TResult Function(HasNoThreeLowercaseLettersRegex<T> value)
+        hasNoThreeLowercaseLettersRegex,
+    required TResult Function(Multiline<T> value) multiline,
+  }) {
+    return unfilledEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(HasNoTwoUppercaseLetters<T> value)?
+        hasNoTwoUppercaseLetters,
+    TResult Function(HasNoSpecialcaseLetters<T> value)? hasNoSpecialcaseLetters,
+    TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
+    TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
+        hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
+  }) {
+    return unfilledEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(HasNoTwoUppercaseLetters<T> value)?
+        hasNoTwoUppercaseLetters,
+    TResult Function(HasNoSpecialcaseLetters<T> value)? hasNoSpecialcaseLetters,
+    TResult Function(HasNoTwoDigitsRegex<T> value)? hasNoTwoDigitsRegex,
+    TResult Function(HasNoThreeLowercaseLettersRegex<T> value)?
+        hasNoThreeLowercaseLettersRegex,
+    TResult Function(Multiline<T> value)? multiline,
+    required TResult orElse(),
+  }) {
+    if (unfilledEmail != null) {
+      return unfilledEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnfilledEmail<T> implements ValueFailure<T> {
+  const factory UnfilledEmail({required final String failedValue}) =
+      _$UnfilledEmail<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$UnfilledEmailCopyWith<T, _$UnfilledEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -352,7 +544,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
     required TResult Function(String failedValue) invalidEmail,
     required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
     required TResult Function(String failedValue) hasNoSpecialcaseLetters,
@@ -367,7 +560,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -381,7 +575,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -399,7 +594,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(HasNoTwoUppercaseLetters<T> value)
         hasNoTwoUppercaseLetters,
@@ -416,7 +612,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -432,7 +629,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -529,7 +727,8 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
     required TResult Function(String failedValue) invalidEmail,
     required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
     required TResult Function(String failedValue) hasNoSpecialcaseLetters,
@@ -544,7 +743,8 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -558,7 +758,8 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -576,7 +777,8 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(HasNoTwoUppercaseLetters<T> value)
         hasNoTwoUppercaseLetters,
@@ -593,7 +795,8 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -609,7 +812,8 @@ class _$HasNoTwoUppercaseLetters<T> implements HasNoTwoUppercaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -705,7 +909,8 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
     required TResult Function(String failedValue) invalidEmail,
     required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
     required TResult Function(String failedValue) hasNoSpecialcaseLetters,
@@ -720,7 +925,8 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -734,7 +940,8 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -752,7 +959,8 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(HasNoTwoUppercaseLetters<T> value)
         hasNoTwoUppercaseLetters,
@@ -769,7 +977,8 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -785,7 +994,8 @@ class _$HasNoSpecialcaseLetters<T> implements HasNoSpecialcaseLetters<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -881,7 +1091,8 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
     required TResult Function(String failedValue) invalidEmail,
     required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
     required TResult Function(String failedValue) hasNoSpecialcaseLetters,
@@ -896,7 +1107,8 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -910,7 +1122,8 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -928,7 +1141,8 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(HasNoTwoUppercaseLetters<T> value)
         hasNoTwoUppercaseLetters,
@@ -945,7 +1159,8 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -961,7 +1176,8 @@ class _$HasNoTwoDigitsRegex<T> implements HasNoTwoDigitsRegex<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -1061,7 +1277,8 @@ class _$HasNoThreeLowercaseLettersRegex<T>
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
     required TResult Function(String failedValue) invalidEmail,
     required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
     required TResult Function(String failedValue) hasNoSpecialcaseLetters,
@@ -1076,7 +1293,8 @@ class _$HasNoThreeLowercaseLettersRegex<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -1090,7 +1308,8 @@ class _$HasNoThreeLowercaseLettersRegex<T>
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -1108,7 +1327,8 @@ class _$HasNoThreeLowercaseLettersRegex<T>
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(HasNoTwoUppercaseLetters<T> value)
         hasNoTwoUppercaseLetters,
@@ -1125,7 +1345,8 @@ class _$HasNoThreeLowercaseLettersRegex<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -1141,7 +1362,8 @@ class _$HasNoThreeLowercaseLettersRegex<T>
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -1237,7 +1459,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) unfilledUsername,
+    required TResult Function(String failedValue) unfilledEmail,
     required TResult Function(String failedValue) invalidEmail,
     required TResult Function(String failedValue) hasNoTwoUppercaseLetters,
     required TResult Function(String failedValue) hasNoSpecialcaseLetters,
@@ -1252,7 +1475,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -1266,7 +1490,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? unfilledUsername,
+    TResult Function(String failedValue)? unfilledEmail,
     TResult Function(String failedValue)? invalidEmail,
     TResult Function(String failedValue)? hasNoTwoUppercaseLetters,
     TResult Function(String failedValue)? hasNoSpecialcaseLetters,
@@ -1284,7 +1509,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(UnfilledUsername<T> value) unfilledUsername,
+    required TResult Function(UnfilledEmail<T> value) unfilledEmail,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(HasNoTwoUppercaseLetters<T> value)
         hasNoTwoUppercaseLetters,
@@ -1301,7 +1527,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,
@@ -1317,7 +1544,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(UnfilledUsername<T> value)? unfilledUsername,
+    TResult Function(UnfilledEmail<T> value)? unfilledEmail,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(HasNoTwoUppercaseLetters<T> value)?
         hasNoTwoUppercaseLetters,

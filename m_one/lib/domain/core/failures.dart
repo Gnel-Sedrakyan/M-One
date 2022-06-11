@@ -4,9 +4,12 @@ part 'failures.freezed.dart';
 
 @freezed
 abstract class ValueFailure<T> with _$ValueFailure<T> {
-  const factory ValueFailure.invalidUsername({
+  const factory ValueFailure.unfilledUsername({
     required String failedValue,
-  }) = InvalidUsername<T>;
+  }) = UnfilledUsername<T>;
+  const factory ValueFailure.unfilledEmail({
+    required String failedValue,
+  }) = UnfilledEmail<T>;
   const factory ValueFailure.invalidEmail({
     required String failedValue,
   }) = InvalidEmail<T>;

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:m_one/domain/auth/register_failure.dart';
 import 'package:m_one/domain/auth/user.dart';
@@ -31,6 +32,7 @@ class AuthFacade implements IAuthFacade {
     required Password password,
     required Email email,
   }) async {
+    log('started registering');
     return _authDataRepository.registerWithEmailAndUsernameAndPassword(
         username: username, password: password, email: email);
   }
