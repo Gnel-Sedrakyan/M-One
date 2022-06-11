@@ -8,10 +8,10 @@ class AppWidget extends StatelessWidget {
   late CoreRouterDelegate delegate = CoreRouterDelegate();
   @override
   Widget build(BuildContext context) {
-    // CoreRouter.routerDelegate.update();
-
     return MaterialApp(
-      theme: AppTheme.buildDarkTheme(),
+      theme: AppTheme.buildLightTheme(),
+      darkTheme: AppTheme.buildDarkTheme(),
+      themeMode: ThemeMode.light,
       // TODO backbuttondispatcher for android's back button
       home: Router(
         routerDelegate: delegate,

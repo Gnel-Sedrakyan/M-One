@@ -15,6 +15,7 @@ class ValidatedTextField extends StatefulWidget {
   final Function(String) onChanged;
   final String? Function() validator;
   final String? labelText;
+
   final bool showErrors;
 
   @override
@@ -22,6 +23,8 @@ class ValidatedTextField extends StatefulWidget {
 }
 
 class _ValidatedTextFieldState extends State<ValidatedTextField> {
+  // TODO center label text
+
   String? errorText;
   bool get hasError => errorText == null ? false : widget.showErrors;
 
@@ -32,6 +35,7 @@ class _ValidatedTextFieldState extends State<ValidatedTextField> {
   @override
   void initState() {
     super.initState();
+
     setState(() {
       errorText = widget.validator();
     });
