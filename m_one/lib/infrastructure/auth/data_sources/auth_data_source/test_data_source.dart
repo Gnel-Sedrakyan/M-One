@@ -31,7 +31,7 @@ class AuthTestDataSource implements IAuthDataSource {
     final emailStr = email.getOrCrash();
 
     final usersJsonList = sharedPreferences.getStringList(allUsers);
-    log(usersJsonList.toString());
+
     List<UserDataModel> usersList = [];
 
     if (usersJsonList != null) {
@@ -78,12 +78,8 @@ class AuthTestDataSource implements IAuthDataSource {
     final usernameStr = username.getOrCrash();
     final passwordStr = password.getOrCrash();
 
-    log("usernameStr");
-    log(usernameStr);
-    log("usernameStr");
-
     final usersJsonList = sharedPreferences.getStringList(allUsers);
-    log(usersJsonList.toString());
+
     if (usersJsonList == null) {
       throw PlatformException(code: 'INVALID_CREDENTIALS_COMBINATION');
     }
@@ -92,8 +88,7 @@ class AuthTestDataSource implements IAuthDataSource {
         usersJsonList.map((e) => UserDataModel.fromJson(e)).toList();
     final sameUsernameUserIndex =
         usersList.indexWhere((element) => element.username == usernameStr);
-    log(sameUsernameUserIndex.toString());
-    log(usernameStr);
+
     if (sameUsernameUserIndex == -1) {
       throw PlatformException(code: 'INVALID_CREDENTIALS_COMBINATION');
     }

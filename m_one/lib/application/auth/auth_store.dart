@@ -29,15 +29,11 @@ abstract class _AuthStoreBase with Store {
 
   @action
   void setLogedIn() {
-    log(loggedInState.name);
-
     loggedInState = LoggedInState.loggedIn;
   }
 
   @action
   Future<void> logOut() async {
-    log(loggedInState.name);
-
     loggedInState = LoggedInState.loggedOut;
     await authFacade.signOut();
   }
@@ -84,7 +80,6 @@ abstract class _AuthStoreBase with Store {
 
   @action
   Future<void> login() async {
-    log('message');
     showErrors = true;
     errorMessage = '';
     if (isFormValid) {
@@ -111,7 +106,6 @@ abstract class _AuthStoreBase with Store {
 
   @action
   Future<void> signUp() async {
-    log('message');
     showErrors = true;
     errorMessage = '';
 
@@ -121,7 +115,7 @@ abstract class _AuthStoreBase with Store {
       final userOptions =
           await authFacade.registerWithEmailAndUsernameAndPassword(
               username: username, password: password, email: email);
-      log('registration complete');
+
       userOptions.fold(
           (l) => {
                 errorMessage = l.map(

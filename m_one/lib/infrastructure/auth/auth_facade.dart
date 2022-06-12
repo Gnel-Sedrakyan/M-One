@@ -32,7 +32,6 @@ class AuthFacade implements IAuthFacade {
     required Password password,
     required Email email,
   }) async {
-    log('started registering');
     return _authDataRepository.registerWithEmailAndUsernameAndPassword(
         username: username, password: password, email: email);
   }
