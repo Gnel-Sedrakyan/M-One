@@ -21,8 +21,6 @@ class ValidatedTextField extends StatefulWidget {
 }
 
 class _ValidatedTextFieldState extends State<ValidatedTextField> {
-  // TODO center label text
-
   String? errorText;
   bool get hasError => errorText == null ? false : widget.showErrors;
 
@@ -60,6 +58,7 @@ class _ValidatedTextFieldState extends State<ValidatedTextField> {
             height: 40,
             child: TextField(
               decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(10.0),
                 focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                         color: hasError
@@ -67,9 +66,7 @@ class _ValidatedTextFieldState extends State<ValidatedTextField> {
                             : Colors.grey,
                         width: 2),
                     borderRadius: BorderRadius.circular(defaultBorderRadius)),
-
                 hintText: widget.labelText,
-                // labelText: labelText,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                       color: hasError
