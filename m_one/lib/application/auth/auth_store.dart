@@ -22,6 +22,9 @@ abstract class _AuthStoreBase with Store {
   _AuthStoreBase({required this.authFacade});
 
   @observable
+  String errorMessage = '';
+
+  @observable
   LoggedInState loggedInState = LoggedInState.initial;
 
   @action
@@ -88,7 +91,13 @@ abstract class _AuthStoreBase with Store {
 
       final userOptions = await authFacade.signInWithUsernameAndPassword(
           username: username, password: password);
-      userOptions.fold((l) => {}, (r) async {
+      userOptions.fold(
+          (l) => {
+                errorMessage = l.map(
+                    serverError: (_) => 'some Error occurred',
+                    invalidCredentialsCombination: (_) =>
+                        "Invalid credentials combination")
+              }, (r) async {
         await checkForAuthState();
         _email = Email('');
         _username = Username('');
@@ -110,7 +119,13 @@ abstract class _AuthStoreBase with Store {
           await authFacade.registerWithEmailAndUsernameAndPassword(
               username: username, password: password, email: email);
       log('registration complete');
-      userOptions.fold((l) => {}, (r) async {
+      userOptions.fold(
+          (l) => {
+                errorMessage = l.map(
+                  emailAlredyRegistered: (_) => "Email alredy registered",
+                  serverError: (_) => 'some Error occurred',
+                )
+              }, (r) async {
         await checkForAuthState();
         _email = Email('');
         _username = Username('');

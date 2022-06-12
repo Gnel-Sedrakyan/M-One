@@ -37,6 +37,22 @@ mixin _$AuthStore on _AuthStoreBase, Store {
               name: '_AuthStoreBase.isFormValid'))
           .value;
 
+  late final _$errorMessageAtom =
+      Atom(name: '_AuthStoreBase.errorMessage', context: context);
+
+  @override
+  String get errorMessage {
+    _$errorMessageAtom.reportRead();
+    return super.errorMessage;
+  }
+
+  @override
+  set errorMessage(String value) {
+    _$errorMessageAtom.reportWrite(value, super.errorMessage, () {
+      super.errorMessage = value;
+    });
+  }
+
   late final _$loggedInStateAtom =
       Atom(name: '_AuthStoreBase.loggedInState', context: context);
 
@@ -229,8 +245,31 @@ mixin _$AuthStore on _AuthStoreBase, Store {
   }
 
   @override
+  void switchToLogin() {
+    final _$actionInfo = _$_AuthStoreBaseActionController.startAction(
+        name: '_AuthStoreBase.switchToLogin');
+    try {
+      return super.switchToLogin();
+    } finally {
+      _$_AuthStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void switchToSuigUp() {
+    final _$actionInfo = _$_AuthStoreBaseActionController.startAction(
+        name: '_AuthStoreBase.switchToSuigUp');
+    try {
+      return super.switchToSuigUp();
+    } finally {
+      _$_AuthStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
+errorMessage: ${errorMessage},
 loggedInState: ${loggedInState},
 loading: ${loading},
 authMode: ${authMode},
