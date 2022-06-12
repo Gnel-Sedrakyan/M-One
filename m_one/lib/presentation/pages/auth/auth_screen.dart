@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'package:m_one/application/auth/auth_store.dart';
@@ -11,7 +9,7 @@ import 'package:m_one/presentation/widgets/auth/validated_text_field.dart';
 import 'package:mobx/mobx.dart';
 
 class AuthScreen extends StatefulWidget {
-  AuthScreen({Key? key}) : super(key: key);
+  const AuthScreen({Key? key}) : super(key: key);
 
   @override
   State<AuthScreen> createState() => _AuthScreenState();
@@ -20,7 +18,7 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   late List<ReactionDisposer> _disposers;
   // For showing a SnackBar
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   final _authStore = getIt<AuthStore>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 

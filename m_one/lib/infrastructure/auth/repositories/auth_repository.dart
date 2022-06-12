@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:m_one/domain/auth/register_failure.dart';
 import 'package:m_one/domain/auth/sign_in_failure.dart';
 import 'package:m_one/domain/auth/user.dart';
@@ -76,7 +74,7 @@ class AuthDataRepository implements IAuthDataRepository {
     try {
       final UserModel user = await userDataSource.getCachedUser();
       return Some(user);
-    } on NoCachedValueError catch (a_) {
+    } on NoCachedValueError catch (_) {
       return none();
     }
   }

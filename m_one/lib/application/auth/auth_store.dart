@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:injectable/injectable.dart';
 import 'package:m_one/domain/auth/i_auth_facade.dart';
 import 'package:m_one/domain/auth/value_objects.dart';

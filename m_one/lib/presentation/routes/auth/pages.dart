@@ -11,7 +11,7 @@ class AuthPage extends Page {
     return MaterialPageRoute(
       settings: this,
       builder: (BuildContext context) {
-        return AuthScreen();
+        return const AuthScreen();
       },
     );
   }
