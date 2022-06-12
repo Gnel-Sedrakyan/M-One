@@ -86,6 +86,7 @@ abstract class _AuthStoreBase with Store {
   Future<void> login() async {
     log('message');
     showErrors = true;
+    errorMessage = '';
     if (isFormValid) {
       loading = true;
 
@@ -112,6 +113,8 @@ abstract class _AuthStoreBase with Store {
   Future<void> signUp() async {
     log('message');
     showErrors = true;
+    errorMessage = '';
+
     if (isFormValid) {
       loading = true;
 
